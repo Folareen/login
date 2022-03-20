@@ -1,0 +1,154 @@
+body{
+    margin: 0;
+    padding:0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(120deg, #2980b9, #8e44ad);
+    min-height: 100vh;
+    overflow: hidden;
+}
+@keyframes bodydisplay {
+    0%{
+        visibility: collapse;
+    }
+    100%{
+        visibility: visible;
+    }
+}
+
+
+/* container */
+div.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 350px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-sizing: border-box;
+    visibility: hidden;
+    animation-name: bodydisplay;
+    animation-delay: 2s;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+/* header */
+.header h1{
+    text-align: center;
+    font-weight: 900;
+    font-size: 30px;
+}
+
+/*form-box */
+.form-box{
+    padding: 30px;
+}
+
+/* username and password */
+.form-box .input label{
+    position: absolute;
+    display: block;
+    font-size: 13px;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.5);
+    top: -5px;
+    left: 0;
+}
+.form-box .input{
+    border-bottom:2px solid rgba(0, 0, 0, 0.5);
+    padding: 8px 0 0 0;
+    position: relative;
+    margin-bottom: 20px;
+}
+.form-box .input input{
+    border: none;
+    outline: none;
+    height: 100%;
+    font-weight: 700;
+    width: 100%;
+    padding: 0;
+}
+.form-box .input input:focus{
+    background: rgba(0, 0, 0, 0.06);
+    transition: .5s; 
+}
+.form-box .input input:focus ~ label{
+    top: -12px;
+    transition: .5s;
+    color: rgba(41, 128, 185, 1);
+}
+.form-box .input input:focus ~ label ~ div{
+    width: 100%;
+    height: 2px;
+    background-color: #2980b9;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    transition:.5s;
+}
+
+/* forgot password */
+.form-box a{
+    display: block;
+    text-decoration: none;
+    color:rgba(0, 0, 0, 0.5);
+    font-size: 13px;
+    font-weight: 800;
+    margin-top: 15px;
+    outline:none;
+}
+.form-box  a:hover{
+    text-decoration: underline;
+    color:rgba(0, 0, 0, 0.8) ;
+}
+
+/* login */
+.form-box input[type="submit"]{
+    width: 100%;
+    border-radius: 20px;
+    height: 40px;
+    border: none;
+    outline: none;
+    background-color: rgb(88, 99, 252);
+    margin-top: 15px;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+}
+.form-box input[type="submit"]:hover{
+    background-color:rgba(88, 99, 252, 0.8);
+}
+
+/* not a member */
+.member {
+    text-align: center;
+    color:rgba(0, 0, 0, 0.6);
+    margin-bottom: 35px;
+    font-size: 13px;
+    font-weight: 800;
+}
+.member a{
+    text-decoration: none;
+    color:rgba(88, 99, 252, 0.8);
+}
+.member a:hover{
+    text-decoration: underline;
+    color:rgba(88, 99, 252, 1);
+}
+.icons{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 35%;
+    margin: 10px auto;
+}
+.icons i{
+    font-size: 1.3em;
+    color: rgb(55, 95, 180);
+}
+.icons i:hover{
+    cursor: pointer;
+    color: darkblue;
+}
