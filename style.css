@@ -2,7 +2,7 @@ body{
     margin: 0;
     padding:0;
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(120deg, #2980b9, #8e44ad);
+    background: linear-gradient(120deg, #01130d, #0e0701);
     min-height: 100vh;
     overflow: hidden;
 }
@@ -15,16 +15,39 @@ body{
     }
 }
 
+/* image */
+.image{
+    position: absolute;
+    z-index: 1;
+    opacity: 0.5;
+    width: 350px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    visibility: hidden;
+    animation-name: bodydisplay;
+    animation-delay: 1s;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    /* animation-timing-function: ease-out; */
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 /* container */
-div.container{
+.container{
+    z-index: 2;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 350px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
+    height: 600px;
+    background-color: rgba(255, 255, 255, 0.4);
     box-sizing: border-box;
     visibility: hidden;
     animation-name: bodydisplay;
@@ -37,51 +60,61 @@ div.container{
 .header h1{
     text-align: center;
     font-weight: 900;
-    font-size: 30px;
+    font-size: 35px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 40px;
 }
 
 /*form-box */
 .form-box{
     padding: 30px;
 }
-
+/* h3 */
+h3{
+    text-align: center;
+    font-weight: 300;
+    font-family: sans-serif;
+    margin: 0 auto 40px auto;
+}
 /* username and password */
 .form-box .input label{
     position: absolute;
     display: block;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 900;
     color: rgba(0, 0, 0, 0.5);
-    top: -5px;
+    top: -9px;
     left: 0;
 }
 .form-box .input{
     border-bottom:2px solid rgba(0, 0, 0, 0.5);
     padding: 8px 0 0 0;
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 .form-box .input input{
     border: none;
     outline: none;
     height: 100%;
     font-weight: 700;
+    font-size: 15px;
     width: 100%;
     padding: 0;
+    background-color: transparent;
 }
 .form-box .input input:focus{
     background: rgba(0, 0, 0, 0.06);
     transition: .5s; 
 }
 .form-box .input input:focus ~ label{
-    top: -12px;
+    top: -15px;
     transition: .5s;
-    color: rgba(41, 128, 185, 1);
+    color: rgb(2, 41, 66);
 }
 .form-box .input input:focus ~ label ~ div{
     width: 100%;
     height: 2px;
-    background-color: #2980b9;
+    background-color: rgb(2, 41, 66);
     position: absolute;
     left: 0;
     bottom: -2px;
@@ -95,60 +128,99 @@ div.container{
     color:rgba(0, 0, 0, 0.5);
     font-size: 13px;
     font-weight: 800;
-    margin-top: 15px;
-    outline:none;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    text-align: right;
 }
-.form-box  a:hover{
+.form-box a:hover{
     text-decoration: underline;
     color:rgba(0, 0, 0, 0.8) ;
 }
 
 /* login */
 .form-box input[type="submit"]{
-    width: 100%;
+    width: 70%;
+    display: block;
     border-radius: 20px;
     height: 40px;
     border: none;
-    outline: none;
-    background-color: rgb(88, 99, 252);
-    margin-top: 15px;
+    background-image: linear-gradient(120deg, rgb(9, 34, 25), rgb(32, 18, 6));
+    margin: 15px auto 0 auto;
     color: white;
     font-weight: 600;
     font-size: 18px;
     cursor: pointer;
 }
 .form-box input[type="submit"]:hover{
-    background-color:rgba(88, 99, 252, 0.8);
+    background:rgb(14, 7, 1)!important;
 }
 
-/* not a member */
-.member {
-    text-align: center;
-    color:rgba(0, 0, 0, 0.6);
-    margin-bottom: 35px;
-    font-size: 13px;
-    font-weight: 800;
-}
-.member a{
-    text-decoration: none;
-    color:rgba(88, 99, 252, 0.8);
-}
-.member a:hover{
-    text-decoration: underline;
-    color:rgba(88, 99, 252, 1);
-}
-.icons{
+/* or */
+.or{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    font-size: 16px;
     align-items: center;
-    width: 35%;
-    margin: 10px auto;
+    margin: 5px auto;
+    width: 100%;
 }
-.icons i{
-    font-size: 1.3em;
-    color: rgb(55, 95, 180);
+hr{
+    width: 40%;
+    font-size: 10px;
 }
-.icons i:hover{
-    cursor: pointer;
-    color: darkblue;
+.or p{
+    width: 10%;
+    text-align: center;
+}
+
+/* google */
+.or ~ a{
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    color: rgb(22, 22, 22);
+    font-weight: bold;
+    font-size: 14px;
+    font-family: sans-serif;
+    margin: 20px auto 30px auto;
+}
+
+/* new */
+.new{
+    font-size: 1rem;
+    margin: 20px auto;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+.new a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+a:hover{
+    text-decoration: underline;
+}
+
+@media screen and (min-width:768px) {
+    main{
+        height: max-content;
+        display: flex;
+        width: max-content;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .image, .container{
+        z-index: 1;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(0);
+    }
+    .image{
+        opacity: 1;
+    }
+    .container{
+        background-color: rgba(255, 255, 255, 0.8);
+    }
 }
